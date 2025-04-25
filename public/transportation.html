@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to Taniti</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://unpkg.com/tailwindcss-cdn@3.4.10/tailwindcss.js"></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-10" hx-get="/api/components/layout/header" hx-trigger="load"></header>
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <!-- Page Title -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Transportation Options</h1>
+        <div id="transport-cards" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 py-10 max-w-6xl mx-auto px-4"></div>
+        <!-- <button class="bg-blue-100 text-blue-800 px-4 py-2 rounded hover:bg-blue-200 text-sm" hx-get="/components/details/taxi.html" hx-target="#taxi-details" hx-swap="innerHTML" hx-on: click="document.getElementById('taxi-details').classList.remove('hidden')">
+            Details
+          </button> -->
+<!-- transportation.html dynamic HTMX load -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div hx-get="/components/transport-card.html"
+         hx-vals='{"title": "Taxi Services", "description": "24/7 travel on the island", "image": "assets/taxi.jpg", "detailsId": "taxi-details", "detailsFile": "/components/details/taxi.html"}'
+         hx-trigger="load"
+         hx-swap="outerHTML"
+         class="h-64">
+    </div>
+  
+    <div hx-get="/components/transport-card.html"
+         hx-vals='{"title": "Rental Cars", "description": "Drive around Taniti", "image": "assets/rental.jpg", "detailsId": "rental-details", "detailsFile": "/components/details/rental.html"}'
+         hx-trigger="load"
+         hx-swap="outerHTML"
+         class="h-64">
+    </div>
+  
+    <!-- repeat for other cards -->
+  </div>
+    </main>
+
+    <footer class="bg-white border-t mt-16" hx-get="/api/components/layout/footer" hx-trigger="load"></footer>
+    <script src="index.js"></script>
+  </body>
+</html>

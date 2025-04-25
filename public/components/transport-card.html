@@ -1,0 +1,26 @@
+<!-- components/transport-card.html -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img src="{{image}}" alt="{{title}}" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">{{title}}</h3>
+      <p class="text-sm text-gray-600">{{description}}</p>
+  
+      <div id="{{detailsId}}" class="mt-4 text-sm text-gray-700 hidden"></div>
+  
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button 
+          class="bg-blue-100 text-blue-800 px-4 py-2 rounded hover:bg-blue-200 text-sm"
+          hx-get="{{detailsFile}}"
+          hx-target="#{{detailsId}}"
+          hx-swap="innerHTML"
+          hx-on:afterOnLoad="document.getElementById('{{detailsId}}').classList.remove('hidden')"
+        >
+          Details
+        </button>
+        <a href="booking.html" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 text-sm">
+          Book Now!
+        </a>
+      </div>
+    </div>
+  </div>
+  
