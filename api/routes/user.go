@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/BstevensG4Gy/htmx-starter/api/types"
+	"github.com/BstevensG4G/htmx-starter/api/types"
 	"github.com/labstack/echo/v4"
 )
 
