@@ -1,4 +1,4 @@
-module github.com/zachatrocity/htmx-hyperscript-starter
+module github.com/BstevensG4G/htmx-starter
 
 go 1.22.0
 

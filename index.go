@@ -10,7 +10,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	user "github.com/zachatrocity/htmx-hyperscript-starter/api/routes"
+	user "github.com/BstevensG4G/htmx-starter/api/routes"
 )
 
 func main() {

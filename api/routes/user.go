@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/BstevensG4Gy/htmx-starter/api/types"
 	"github.com/labstack/echo/v4"
-	"github.com/zachatrocity/htmx-hyperscript-starter/api/types"
 )
 
 func GetUser(c echo.Context) error {
